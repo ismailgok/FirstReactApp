@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
 
-const App = () => {
-    window.navigator.geolocation.getCurrentPosition()
+class App extends React.Component{
 
-    return <div>Hi there!</div>
-};
+    render() {
+        window.navigator.geolocation.getCurrentPosition(
+            (position) => console.log(position),
+            (err) => console.log(err)
+        );
 
+        return <div>Latitude: </div>
+    }
 
+}
 
 ReactDOM.render(
 
